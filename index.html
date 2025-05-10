@@ -4,79 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HenryMap - You’re safe here. No ads. No tracking. No pressure.">
     <title>HenryMap</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background-color: #0e0e0e;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-        header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f2;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             text-align: center;
-            padding: 4rem 2rem 2rem 2rem;
+            padding: 1.5rem;
         }
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.75rem;
+            color: #111;
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            margin: 1rem 0 2rem;
             max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.85;
         }
         .buttons {
-            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        button {
-            background-color: #ffffff;
-            color: #0e0e0e;
+        a.button {
             padding: 0.75rem 1.5rem;
-            margin: 0.5rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            border-radius: 4px;
-        }
-        section {
-            padding: 4rem 2rem;
-            border-top: 1px solid #333;
-        }
-        textarea {
-            width: 100%;
-            max-width: 600px;
-            height: 200px;
-            margin-top: 1rem;
-            background: #1e1e1e;
+            background-color: #111;
             color: #fff;
-            border: 1px solid #444;
-            border-radius: 4px;
-            padding: 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        a.button:hover {
+            background-color: #444;
+        }
+        footer {
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>You’re safe here.</h1>
-        <p>No ads. No tracking. No pressure.</p>
-        <div class="buttons">
-            <button onclick="document.getElementById('journal').scrollIntoView()">Begin a Journal Entry</button>
-            <button onclick="document.getElementById('philosophy').scrollIntoView()">View the Philosophy</button>
-        </div>
-    </header>
-    <section id="journal">
-        <h2>Begin a Journal Entry</h2>
-        <textarea placeholder="Write anything. No one will ever see this. Not even us."></textarea>
-    </section>
-    <section id="philosophy">
-        <h2>The Philosophy</h2>
-        <p>
-            HenryMap was built as a sanctuary — a space to reflect, breathe, and stay grounded. 
-            In a world full of noise, this is your quiet place. We don’t track you. We don’t analyze you. 
-            We just give you space to be real. You hold the only key.
-        </p>
-    </section>
+    <h1>HenryMap</h1>
+    <p>You’re safe here. No ads. No tracking. No pressure.<br>Just a place to breathe, reflect, and return home to yourself.</p>
+    <div class="buttons">
+        <a href="#" class="button">Begin a Journal Entry</a>
+        <a href="#" class="button">View the Philosophy</a>
+        <a href="#" class="button">Support the Mission</a>
+    </div>
+    <footer>
+        Built with love. We do not collect or store any user data.
+    </footer>
 </body>
 </html>
