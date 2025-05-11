@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map | HenryMap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            color: white;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 1rem;
+        }
+        .message {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .subtext {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+        .button {
+            background-color: #1f1f1f;
+            border: 1px solid #444;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body onclick="nextMessage()">
+    <div class="message" id="encouragement">Stay present on this journey.</div>
+    <div class="subtext" id="subtext">25 min (9 mi)</div>
+    <a class="button" href="/">Return to Journal</a>
+
+    <script>
+        const messages = [
+            "Stay present on this journey.",
+            "Breathe here. Then go.",
+            "Take the long way. See more.",
+            "You're not late. You're aligned.",
+            "Let go of yesterday’s map.",
+            "Stillness is part of the route.",
+            "This moment is your waypoint.",
+            "Grace moves at walking speed."
+        ];
+        const times = [
+            "25 min (9 mi)",
+            "12 min (3.2 mi)",
+            "40 min (10.5 mi)",
+            "18 min (4.6 mi)",
+            "32 min (8 mi)",
+            "9 min (2 mi)",
+            "58 min (14.3 mi)",
+            "22 min (5.7 mi)"
+        ];
+        let i = 0;
+
+        function nextMessage() {
+            i = (i + 1) % messages.length;
+            document.getElementById("encouragement").style.opacity = 0;
+            document.getElementById("subtext").style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById("encouragement").textContent = messages[i];
+                document.getElementById("subtext").textContent = times[i];
+                document.getElementById("encouragement").style.opacity = 1;
+                document.getElementById("subtext").style.opacity = 1;
+            }, 300);
+        }
+
+        setInterval(nextMessage, 7000);
+    </script>
+</body>
+</html>
