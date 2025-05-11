@@ -3,60 +3,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Begin a Journal Entry | HenryMap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HenryMap Journal</title>
     <style>
         body {
+            font-family: 'Georgia', serif;
+            background-color: #fdf6e3;
+            color: #2e2e2e;
             margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            color: #222;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            padding: 2rem;
+            line-height: 1.8;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
         h1 {
-            margin-bottom: 0.5rem;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
-        #prompt {
-            font-size: 1.5rem;
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        .prompt {
+            background: #fff;
+            padding: 1rem 1.25rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+            font-size: 1.1rem;
         }
         button {
+            display: block;
+            margin: 1rem auto;
             padding: 0.75rem 1.5rem;
             background-color: #222;
             color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
+            font-family: 'Georgia', serif;
             font-size: 1rem;
-            margin-top: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
         button:hover {
             background-color: #444;
         }
         footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
             margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #888;
         }
     </style>
 </head>
 <body>
     <h1>Begin a Journal Entry</h1>
-    <div id="prompt">Loading prompt...</div>
+<div class="prompt" id="prompt">Loading prompt...</div>
     <button onclick="nextPrompt()">Give me another</button>
-    <footer>All prompts local. Nothing saved. Just you and the mirror.</footer>
-
     <script>
         const prompts = [
             "What’s one thing you’re holding that’s not yours?",
@@ -67,14 +67,12 @@
             "What did you survive that no one else saw?",
             "If today was a turning point, what would change?"
         ];
-
-        function nextPrompt() {
+        function nextPrompt() {{
             const random = Math.floor(Math.random() * prompts.length);
             document.getElementById('prompt').textContent = prompts[random];
-        }
-
-        // Load initial prompt
+        }}
         nextPrompt();
     </script>
+    <footer>HenryMap | Built for n=1 | Moleskine Mode</footer>
 </body>
 </html>
